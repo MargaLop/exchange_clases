@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+
 
 class Cotizacion:
     def __init__(self,moneda_ref,moneda_cambio,tiempo_ref=60 ):
@@ -15,10 +15,9 @@ class Cotizacion:
         self.valor_str = r.json()["data"]["rates"][self.moneda_ref]
         self.valor = "{:.2f}".format(float(self.valor_str))
             # self.valor = solicita_nuevo_precio_de(self.moneda_ref, self.moneda_cambio)
-        self.now = datetime.now().strftime("%y-%m-%d %H:%M:%S")
+        
 
     def dame_txt(self):
         self.actualizar()
         return self.moneda_ref + ' - ' + f"{self.valor}" + \
-            self.moneda_cambio + ' a las ' + \
-            self.now
+            self.moneda_cambio 

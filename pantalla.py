@@ -1,4 +1,5 @@
 import py_compile
+from datetime import datetime
 
 
 class Pantalla:
@@ -14,3 +15,6 @@ class Pantalla:
         # cada self.tiempo_ref:
         self.dibujar()
 
+    def fecha(self):
+        self.now = datetime.now().strftime("%y-%m-%d %H:%M:%S")
+        return 'Cotizacion de las:' + self.now

@@ -18,6 +18,7 @@ if __name__ == "__main__":
 
     while True:
         pantalla.buffer = []
+        pantalla.buffer.append(pantalla.fecha())
         for cotizacion in cotizaciones:
             pantalla.buffer.append(cotizacion.dame_txt())
         pantalla.buffer.append(salida.dame_txt())
