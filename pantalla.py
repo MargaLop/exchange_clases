@@ -7,8 +7,10 @@ class Pantalla:
         self.tiempo_ref = tiempo_ref
 
     def dibujar (self):
-        print(self.buffer)
+        for linea in self.buffer:
+            print(linea)
 
     def actualizar(self):
         # cada self.tiempo_ref:
         self.dibujar()
+
